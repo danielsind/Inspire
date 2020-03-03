@@ -1,4 +1,7 @@
 package com.moringa.myinspire;
 
-public class QuotesHome {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class QuotesHome extends AppCompatActivity {
+
 }
