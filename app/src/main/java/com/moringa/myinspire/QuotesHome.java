@@ -1,14 +1,34 @@
 package com.moringa.myinspire;
 
+import android.os.Bundle;
+import android.view.View;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class QuotesHome extends AppCompatActivity {
     @BindView(R.id.tabLayout) TabLayout tabLayout;
     @BindView(R.id.viewPager) ViewPager viewPager;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_quotes_home);
+        ButterKnife.bind(this);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+         adapter.addFragment(new ProfileFragment(), "Profile");
+         adapter.addFragment(new QuotesFragment() , "Quotes");
+         adapter.addFragment(new FavoriteQuotes(), "Favorite Quotes");
+
+         viewPager.setAdapter(adapter);
+         tabLayout.setupWithViewPager(viewPager);
+    }
 
 }
