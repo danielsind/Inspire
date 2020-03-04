@@ -8,17 +8,31 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SearchView;
+
 
 public class ProfileFragment extends Fragment {
-    View profileView;
+    ListView lv;
+    SearchView searchView;
+    ArrayAdapter adapter;
+
+    public String[] posts = new String[] {"Work Hard Always","Be Positive", "Never give Up","Genius is HardWork","Winners win from the start"};
+    public String[] author = new String[] {"James","Myles","Jonah","Henry","Timothy"};
+
     public ProfileFragment (){
 
     }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        profileView = inflater.inflate(R.layout.fragment_profile, container, false);
-        return profileView;
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        lv = (ListView) view.findViewById(R.id.listView);
+        adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,posts);
+        lv.setAdapter(adapter);
+        return view;
     }
 }
 
