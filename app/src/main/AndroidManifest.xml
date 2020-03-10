@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:authorities="com.moringa.myinspire.QuotesFragment"
+            android:name="androidx.core.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@layout/fragment_quotes"/>
+        </provider>
         <activity android:name=".QuotesHome">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
