@@ -12,11 +12,11 @@
         <activity android:name=".QuotesHome">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringa.myinspire.MainActivity">
+                android:value="com.moringa.myinspire.LoginActivity">
 
             </meta-data>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

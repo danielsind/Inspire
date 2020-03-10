@@ -11,7 +11,7 @@ import android.widget.EditText;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 @BindView(R.id.login) Button mLogin;
     @BindView((R.id.userName))
     EditText mUserName;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String userName = mUserName.getText().toString();
-                Intent intent = new Intent(MainActivity.this,QuotesHome.class);
+                Intent intent = new Intent(LoginActivity.this,QuotesHome.class);
                 intent.putExtra("userName" , userName);
                 startActivity(intent);
             }
