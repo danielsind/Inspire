@@ -27,7 +27,7 @@ public class QuotesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_quotes, container, false);
         lv = (ListView) view.findViewById(R.id.listView);
-        adapter = new MyArrayAdapter(this, android.R.layout.simple_selectable_list_item, posts, author);
+        adapter = new MyArrayAdapter(this, android.R.layout.simple_list_item_1, posts, author);
         lv.setAdapter(adapter);
         return view;
     }
