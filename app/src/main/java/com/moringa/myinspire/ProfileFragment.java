@@ -1,5 +1,6 @@
 package com.moringa.myinspire;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,10 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SearchView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import butterknife.BindView;
+
 import static android.R.*;
 
 
@@ -18,6 +23,8 @@ public class ProfileFragment extends Fragment {
     ListView lv;
     SearchView searchView;
     MyArrayAdapter adapter;
+    @BindView(R.id.shareButton)
+    FloatingActionButton mShareButton;
 
     public String[] posts = new String[] {"Work Hard Always","Be Positive", "Never give Up","Genius is HardWork","Winners win from the start"};
     public String[] author = new String[] {"James","Myles","Jonah","Henry","Timothy"};

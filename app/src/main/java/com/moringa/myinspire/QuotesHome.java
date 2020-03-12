@@ -1,5 +1,6 @@
 package com.moringa.myinspire;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -7,14 +8,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class QuotesHome extends AppCompatActivity {
+public class QuotesHome extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.tabLayout) TabLayout tabLayout;
     @BindView(R.id.viewPager) ViewPager viewPager;
+    @BindView(R.id.shareButton)
+    FloatingActionButton mShareButton;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,4 +35,16 @@ public class QuotesHome extends AppCompatActivity {
          tabLayout.setupWithViewPager(viewPager);
     }
 
+    @Override
+    public void onClick(View view) {
+        if(view == mShareButton){
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+            sendIntent.setType("text/plain");
+
+            Intent share = Intent.createChooser(sendIntent, null);
+            startActivity(share);
+        }
+    }
 }
