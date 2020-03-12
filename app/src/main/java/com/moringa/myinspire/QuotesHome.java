@@ -30,6 +30,7 @@ public class QuotesHome extends AppCompatActivity implements View.OnClickListene
          adapter.addFragment(new ProfileFragment(), "Profile");
          adapter.addFragment(new QuotesFragment() , "Quotes");
          adapter.addFragment(new FavoriteQuotes(), "Favorite Quotes");
+         mShareButton.setOnClickListener(this);
 
          viewPager.setAdapter(adapter);
          tabLayout.setupWithViewPager(viewPager);
