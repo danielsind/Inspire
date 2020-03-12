@@ -9,21 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+
         <provider
-            android:authorities="com.moringa.myinspire.QuotesFragment"
             android:name="androidx.core.content.FileProvider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:authorities="com.moringa.myinspire.QuotesFragment"
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@layout/fragment_quotes"/>
+                android:resource="@layout/fragment_quotes" />
         </provider>
+
         <activity android:name=".QuotesHome">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringa.myinspire.LoginActivity">
-
-            </meta-data>
+                android:value="com.moringa.myinspire.LoginActivity"></meta-data>
         </activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
