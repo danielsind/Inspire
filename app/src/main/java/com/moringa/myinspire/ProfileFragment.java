@@ -1,6 +1,5 @@
 package com.moringa.myinspire;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,10 +12,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.moringa.myinspire.adapter.MyArrayAdapter;
 
 import butterknife.BindView;
-
-import static android.R.*;
 
 
 public class ProfileFragment extends Fragment {

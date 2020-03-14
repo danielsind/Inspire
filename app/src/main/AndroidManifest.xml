@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:label="@string/title_activity_settings"></activity>
 
         <provider
@@ -24,12 +24,12 @@
                 android:resource="@layout/fragment_quotes" />
         </provider>
 
-        <activity android:name=".QuotesHome">
+        <activity android:name=".ui.QuotesHome">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringa.myinspire.LoginActivity"></meta-data>
+                android:value="com.moringa.myinspire.ui.LoginActivity"></meta-data>
         </activity>
-        <activity android:name=".LoginActivity">
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

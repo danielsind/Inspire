@@ -1,4 +1,4 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.moringa.myinspire.FavoriteQuotes;
+import com.moringa.myinspire.ProfileFragment;
+import com.moringa.myinspire.QuotesFragment;
+import com.moringa.myinspire.R;
+import com.moringa.myinspire.adapter.ViewPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

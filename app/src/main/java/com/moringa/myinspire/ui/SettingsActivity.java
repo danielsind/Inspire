@@ -1,4 +1,4 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.ui;
 
 import android.os.Bundle;
 
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+
+import com.moringa.myinspire.R;
 
 public class SettingsActivity extends AppCompatActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {

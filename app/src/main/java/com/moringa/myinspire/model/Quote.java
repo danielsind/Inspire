@@ -1,13 +1,22 @@
-package model;
+package com.moringa.myinspire.model;
 
 public class Quote {
     public String quote;
-    public String character;
-    public String image;
+    public String author;
+    public String image_inspiration;
 }
 
-//{
-//        "quote": "When I look at people I don't see colors; I just see crackpot religions.",
-//        "character": "Chief Wiggum",
-//        "image": "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FChiefWiggum.png?1497567511716",
-//        "characterDirection": "Left"
+//[
+//        {
+//        "id": 1,
+//        "quote": "Never give up",
+//        "author": "Daniel",
+//        "image_inspiration": "/media/rose_bouquet_buds_115307_1280x720.jpg"
+//        },
+//        {
+//        "id": 2,
+//        "quote": "Be a peacemaker",
+//        "author": "Danny",
+//        "image_inspiration": "/media/guitar_music_strings_musical_instrument_111863_1280x720.jpg"
+//        }
+//        ]

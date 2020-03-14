@@ -1,4 +1,4 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.moringa.myinspire.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String userName = mUserName.getText().toString();
-                Intent intent = new Intent(LoginActivity.this,QuotesHome.class);
+                Intent intent = new Intent(LoginActivity.this, QuotesHome.class);
                 intent.putExtra("userName" , userName);
                 startActivity(intent);
             }

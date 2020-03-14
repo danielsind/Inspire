@@ -1,8 +1,11 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.adapter;
 
 import android.content.Context;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+
+import com.moringa.myinspire.ProfileFragment;
+import com.moringa.myinspire.QuotesFragment;
 
 public class MyArrayAdapter<S> extends ArrayAdapter {
     private Context mContext;
@@ -16,13 +19,13 @@ public class MyArrayAdapter<S> extends ArrayAdapter {
 //        this.mAuthor= mAuthor;
 //    }
 
-    public MyArrayAdapter(ProfileFragment profileFragment,int resource, String[] posts, String[] author) {
+    public MyArrayAdapter(ProfileFragment profileFragment, int resource, String[] posts, String[] author) {
         super(profileFragment.getContext(), resource);
         this.mContext=profileFragment.getContext();
         this.mPosts = posts;
         this.mAuthor = author;
     }
-    public MyArrayAdapter(QuotesFragment quotesFragment,int resource, String[] posts, String[] author) {
+    public MyArrayAdapter(QuotesFragment quotesFragment, int resource, String[] posts, String[] author) {
         super(quotesFragment.getContext(), resource);
         this.mContext=quotesFragment.getContext();
         this.mPosts = posts;

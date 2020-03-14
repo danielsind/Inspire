@@ -1,4 +1,4 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.adapter;
 
 import android.widget.ListView;
 
