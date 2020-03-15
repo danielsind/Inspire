@@ -4,6 +4,30 @@ public class Quote {
     public String quote;
     public String author;
     public String image_inspiration;
+
+    public String getQuote() {
+        return quote;
+    }
+
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getImage_inspiration() {
+        return image_inspiration;
+    }
+
+    public void setImage_inspiration(String image_inspiration) {
+        this.image_inspiration = image_inspiration;
+    }
 }
 
 //[

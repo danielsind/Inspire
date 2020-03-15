@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static Retrofit retrofit;
-    private static String BASE_URL = "http://ourquotesapp.herokuapp.com/?format=json";
+    private static String BASE_URL = "http://ourquotesapp.herokuapp.com";
 
     public static Retrofit  getRetrofit(){
         if (retrofit == null){
