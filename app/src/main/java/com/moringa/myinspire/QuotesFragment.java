@@ -12,25 +12,20 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.moringa.myinspire.adapter.MyArrayAdapter;
+import com.moringa.myinspire.model.Quote;
+import com.moringa.myinspire.network.GetQuote;
+import com.moringa.myinspire.network.RetrofitClient;
 
-public class QuotesFragment extends Fragment {
+import java.util.List;
 
-    View view;
-    ListView lv;
-    MyArrayAdapter adapter;
-    public String[] posts = new String[] {"Work Hard Always","Be Positive", "Never give Up","Genius is HardWork","Winners win from the start"};
-    public String[] author = new String[] {"James","Myles","Jonah","Henry","Timothy"};
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    public QuotesFragment() {
-
+public class QuotesFragment extends Fragment{
+    public View onCreateView(LayoutInflater inflater.ViewGroup container,Bundle savedInstanceState){
+        View view = inflater.inflate(R.layout.fragment_quotes, container,false);
+        ButterKn
     }
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_quotes, container, false);
-        lv = (ListView) view.findViewById(R.id.listView);
-        adapter = new MyArrayAdapter(this, android.R.layout.simple_list_item_1, posts, author);
-        lv.setAdapter(adapter);
-        return view;
-    }
+
 }
