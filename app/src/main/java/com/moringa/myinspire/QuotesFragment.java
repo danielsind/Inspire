@@ -18,14 +18,11 @@ import com.moringa.myinspire.network.RetrofitClient;
 
 import java.util.List;
 
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class QuotesFragment extends Fragment{
-    public View onCreateView(LayoutInflater inflater.ViewGroup container,Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.fragment_quotes, container,false);
-        ButterKn
-    }
 
 }
