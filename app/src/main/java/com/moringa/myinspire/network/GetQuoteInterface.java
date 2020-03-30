@@ -6,10 +6,9 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
-public interface GetQuote {
-    @GET("/quotes")
-    Call<List<Quote>>getQuote();
-    @GET("/authors")
-    Call<List<Quote>>getAuthor();
+public interface GetQuoteInterface  {
+    @GET
+    Call<List<Quote>> getQuote(@Query("format") String json);
 }
