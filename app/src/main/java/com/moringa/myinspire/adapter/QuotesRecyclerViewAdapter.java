@@ -10,19 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringa.myinspire.R;
-import com.moringa.myinspire.model.QuoteResponse;
+import com.moringa.myinspire.model.QuotesApiResponse;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecyclerViewAdapter.QuotesViewHolder> {
     Context mContext;
-    List<QuoteResponse> mQuotes;
+    List<QuotesApiResponse> mQuotes;
 
-    public QuotesRecyclerViewAdapter(Context context, List<QuoteResponse> quotes){
+    public QuotesRecyclerViewAdapter(Context context, List<QuotesApiResponse> quotes){
         mContext = context;
         mQuotes = quotes;
 
@@ -48,9 +47,10 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
     }
 
     public class QuotesViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.authorTextView)
-        TextView mAuthorTextView;
+        @BindView(R.id.authorTextView) TextView mAuthorTextView;
         @BindView(R.id.quoteTextView) TextView mQuoteTextView;
+        @BindView(R.id.sourceTextView) TextView mSourceTextView;
+        @BindView(R.id.ratingTextView) TextView mRatingTextView;
 
         public QuotesViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,9 +59,11 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
 
         }
 
-        public void bindQuotes(QuoteResponse quoteResponse) {
+        public void bindQuotes(QuotesApiResponse quoteResponse) {
             mAuthorTextView.setText(quoteResponse.getAuthor());
-            mQuoteTextView.setText(quoteResponse.getQuote());
+            mQuoteTextView.setText(quoteResponse.getEn());
+            mSourceTextView.setText("Number of Votes: "+quoteResponse.getNumberOfVotes());
+            mRatingTextView.setText("Rating: "+ quoteResponse.getRating());
         }
     }
 

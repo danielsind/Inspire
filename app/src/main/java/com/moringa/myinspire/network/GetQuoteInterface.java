@@ -1,6 +1,5 @@
 package com.moringa.myinspire.network;
 
-import com.moringa.myinspire.model.QuoteResponse;
 import com.moringa.myinspire.model.QuotesApiResponse;
 
 import java.util.List;
