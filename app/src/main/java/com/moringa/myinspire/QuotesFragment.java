@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringa.myinspire.adapter.QuotesRecyclerViewAdapter;
 import com.moringa.myinspire.model.QuoteResponse;
+import com.moringa.myinspire.model.QuotesApiResponse;
 import com.moringa.myinspire.network.GetQuoteInterface;
 import com.moringa.myinspire.network.RetrofitClient;
 
@@ -28,10 +29,10 @@ import retrofit2.Response;
 public class QuotesFragment extends Fragment{
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    @BindView(R.id.authorTextView)
-    TextView mAuthorTextView;
-    @BindView(R.id.quoteTextView) TextView mQuoteTextView;
-    private List<QuoteResponse> mQuotes;
+   // @BindView(R.id.authorTextView)
+    //TextView mAuthorTextView;
+    //@BindView(R.id.quoteTextView) TextView mQuoteTextView;
+    private List<QuotesApiResponse> mQuotes;
     private QuotesRecyclerViewAdapter mQuoteAdapter;
 
     public QuotesFragment(){
@@ -47,11 +48,11 @@ public class QuotesFragment extends Fragment{
 
 
         GetQuoteInterface client = RetrofitClient.getRetrofit();
-        Call<List<QuoteResponse>> call = client.getQuotes();
+        Call<List<QuotesApiResponse>> call = client.getQuotes();
 
-        call.enqueue(new Callback<List<QuoteResponse>>() {
+        call.enqueue(new Callback<List<QuotesApiResponse>>() {
             @Override
-            public void onResponse(Call<List<QuoteResponse>> call, Response<List<QuoteResponse>> response) {
+            public void onResponse(Call<List<QuotesApiResponse>> call, Response<List<QuotesApiResponse>> response) {
                 if (response.isSuccessful()){
                     mQuotes = response.body();
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -59,13 +60,11 @@ public class QuotesFragment extends Fragment{
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setAdapter(mQuoteAdapter);
                 }
-                else{
 
-                }
             }
 
             @Override
-            public void onFailure(Call<List<QuoteResponse>> call, Throwable t) {
+            public void onFailure(Call<List<QuotesApiResponse>> call, Throwable t) {
 
             }
         });
