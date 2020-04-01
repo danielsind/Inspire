@@ -18,6 +18,7 @@
         android:text="Source"
         android:textAlignment="textEnd"
         android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"/>
 
     <TextView
@@ -26,7 +27,8 @@
         android:layout_below="@+id/sourceTextView"
         android:textAlignment="textEnd"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"/>
 
     <TextView
         android:id="@+id/quoteTextView"
