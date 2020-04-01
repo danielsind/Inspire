@@ -60,7 +60,7 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
         }
 
         public void bindQuotes(QuotesApiResponse quoteResponse) {
-            mAuthorTextView.setText(quoteResponse.getAuthor());
+            mAuthorTextView.setText("Author: "+quoteResponse.getAuthor());
             mQuoteTextView.setText(quoteResponse.getEn());
             mSourceTextView.setText("Number of Votes: "+quoteResponse.getNumberOfVotes());
             mRatingTextView.setText("Rating: "+ quoteResponse.getRating());

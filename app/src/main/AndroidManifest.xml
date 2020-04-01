@@ -16,7 +16,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.moringa.myinspire.QuotesFragment"
+            android:authorities="com.moringa.myinspire.fragments.QuotesFragment"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

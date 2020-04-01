@@ -1,4 +1,4 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.fragments;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.moringa.myinspire.R;
 import com.moringa.myinspire.adapter.MyArrayAdapter;
 
 import butterknife.BindView;

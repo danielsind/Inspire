@@ -1,4 +1,4 @@
-package com.moringa.myinspire;
+package com.moringa.myinspire.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.moringa.myinspire.R;
 import com.moringa.myinspire.adapter.QuotesRecyclerViewAdapter;
 import com.moringa.myinspire.model.QuotesApiResponse;
 import com.moringa.myinspire.network.GetQuoteInterface;
@@ -27,23 +28,17 @@ import retrofit2.Response;
 public class QuotesFragment extends Fragment{
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-   // @BindView(R.id.authorTextView)
-    //TextView mAuthorTextView;
-    //@BindView(R.id.quoteTextView) TextView mQuoteTextView;
+
     private List<QuotesApiResponse> mQuotes;
     private QuotesRecyclerViewAdapter mQuoteAdapter;
-
     public QuotesFragment(){
 
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_quotes, container, false);
         ButterKnife.bind(this, view);
-
-
 
         GetQuoteInterface client = RetrofitClient.getRetrofit();
         Call<List<QuotesApiResponse>> call = client.getQuotes();
@@ -69,6 +64,5 @@ public class QuotesFragment extends Fragment{
 
         return view;
     }
-
 
 }

@@ -1,11 +1,10 @@
 package com.moringa.myinspire.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 
-import com.moringa.myinspire.ProfileFragment;
-import com.moringa.myinspire.QuotesFragment;
+import com.moringa.myinspire.fragments.ProfileFragment;
+import com.moringa.myinspire.fragments.QuotesFragment;
 
 public class MyArrayAdapter<S> extends ArrayAdapter {
     private Context mContext;
