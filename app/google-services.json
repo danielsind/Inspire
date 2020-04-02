@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "940829675382",
+    "firebase_url": "https://myinspire-ab301.firebaseio.com",
+    "project_id": "myinspire-ab301",
+    "storage_bucket": "myinspire-ab301.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940829675382:android:f604fd9c9bd376363b7457",
+        "android_client_info": {
+          "package_name": "com.moringa.myinspire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940829675382-57b2f4aq3j4v4t9msropdcvk5skekarv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFXDdNPS3wLKAAYpPPKQ3CbqqXINeXJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940829675382-57b2f4aq3j4v4t9msropdcvk5skekarv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
