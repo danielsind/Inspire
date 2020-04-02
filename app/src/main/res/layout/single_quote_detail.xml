@@ -39,5 +39,14 @@
         android:text="TextView"
         android:paddingBottom="20dp"
         android:textAlignment="center" />
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/ic_action_favorite"
+        android:clickable="true"
+        android:id="@+id/saveFavoriteQuote"
+        android:shadowColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimary"/>
 
 </RelativeLayout>

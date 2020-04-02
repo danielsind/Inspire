@@ -1,10 +1,13 @@
 package com.moringa.myinspire.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaRouter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,14 +17,18 @@ import com.moringa.myinspire.R;
 import com.moringa.myinspire.fragments.FavoriteQuotes;
 import com.moringa.myinspire.model.QuotesApiResponse;
 
+import org.parceler.Parcels;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecyclerViewAdapter.QuotesViewHolder> {
+public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecyclerViewAdapter.QuotesViewHolder> implements View.OnClickListener {
     Context mContext;
     List<QuotesApiResponse> mQuotes;
+    @BindView(R.id.saveFavoriteQuote)
+    Button mSaveFavoriteQuote;
 
     public QuotesRecyclerViewAdapter(Context context, List<QuotesApiResponse> quotes){
         mContext = context;
@@ -48,6 +55,11 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
         return mQuotes.size();
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
+
     public class QuotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.authorTextView) TextView mAuthorTextView;
         @BindView(R.id.quoteTextView) TextView mQuoteTextView;
@@ -71,12 +83,10 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
         @Override
         public void onClick(View view) {
             int position = getLayoutPosition();
-            String author = mQuotes.get(position).getAuthor();
-            String quote = mQuotes.get(position).getEn();
-            String votes = mQuotes.get(position).getNumberOfVotes().toString();
-            String rating = mQuotes.get(position).getRating().toString();
-
-            Intent intent = new Intent(mContext, FavoriteQuotes.class);
+            Intent intent = new Intent(mContext, FavoriteQuotesRecyclerViewAdapter.class);
+            intent.putExtra("position", position);
+            intent.putExtra("mQuotes", Parcels.wrap(mQuotes));
+            mContext.startActivity(intent);
 
         }
     }
