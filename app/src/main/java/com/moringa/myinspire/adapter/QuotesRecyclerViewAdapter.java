@@ -1,6 +1,7 @@
 package com.moringa.myinspire.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.moringa.myinspire.R;
+import com.moringa.myinspire.fragments.FavoriteQuotes;
 import com.moringa.myinspire.model.QuotesApiResponse;
 
 import java.util.List;
@@ -46,7 +48,7 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
         return mQuotes.size();
     }
 
-    public class QuotesViewHolder extends RecyclerView.ViewHolder {
+    public class QuotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.authorTextView) TextView mAuthorTextView;
         @BindView(R.id.quoteTextView) TextView mQuoteTextView;
         @BindView(R.id.sourceTextView) TextView mSourceTextView;
@@ -64,6 +66,18 @@ public class QuotesRecyclerViewAdapter extends RecyclerView.Adapter<QuotesRecycl
             mQuoteTextView.setText(quoteResponse.getEn());
             mSourceTextView.setText("Number of Votes: "+quoteResponse.getNumberOfVotes());
             mRatingTextView.setText("Rating: "+ quoteResponse.getRating());
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getLayoutPosition();
+            String author = mQuotes.get(position).getAuthor();
+            String quote = mQuotes.get(position).getEn();
+            String votes = mQuotes.get(position).getNumberOfVotes().toString();
+            String rating = mQuotes.get(position).getRating().toString();
+
+            Intent intent = new Intent(mContext, FavoriteQuotes.class);
+
         }
     }
 

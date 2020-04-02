@@ -43,6 +43,7 @@ public class QuotesFragment extends Fragment{
         GetQuoteInterface client = RetrofitClient.getRetrofit();
         Call<List<QuotesApiResponse>> call = client.getQuotes();
 
+
         call.enqueue(new Callback<List<QuotesApiResponse>>() {
             @Override
             public void onResponse(Call<List<QuotesApiResponse>> call, Response<List<QuotesApiResponse>> response) {
@@ -52,6 +53,7 @@ public class QuotesFragment extends Fragment{
                     mQuoteAdapter = new QuotesRecyclerViewAdapter(getContext(), mQuotes);
                     mRecyclerView.setLayoutManager(layoutManager);
                     mRecyclerView.setAdapter(mQuoteAdapter);
+
                 }
 
             }
@@ -64,5 +66,7 @@ public class QuotesFragment extends Fragment{
 
         return view;
     }
+
+
 
 }

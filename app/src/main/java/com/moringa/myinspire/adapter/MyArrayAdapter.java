@@ -17,7 +17,6 @@ public class MyArrayAdapter<S> extends ArrayAdapter {
 //        this.mPosts = mPosts;
 //        this.mAuthor= mAuthor;
 //    }
-
     public MyArrayAdapter(ProfileFragment profileFragment, int resource, String[] posts, String[] author) {
         super(profileFragment.getContext(), resource);
         this.mContext=profileFragment.getContext();
