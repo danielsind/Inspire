@@ -19,7 +19,16 @@ import butterknife.BindView;
 
 
 public class ProfileFragment extends Fragment {
+    View profileView;
+    public ProfileFragment (){
 
+    }
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        profileView = inflater.inflate(R.layout.fragment_profile, container, false);
+        return profileView;
+    }
 
 }
 //    ListView lv;
